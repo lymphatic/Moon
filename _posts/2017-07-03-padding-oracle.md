@@ -3,7 +3,7 @@ layout: post
 title: "Padding Oracle Walkthrough [TR]"
 date: 2017-07-03
 excerpt: "Zaafiyetli VM Walkthrough"
-feature: ![images]({{   lymphatic.github.io   }}/assests/img/walkthrough_background.jpg)
+feature: <img src="https://github.com/lymphatic/lymphatic.github.io/blob/master/assets/img/walkthrough_background.jpg?raw=true">
 comments: true
 tag: 
 - vulnhub
@@ -16,7 +16,7 @@ Malum ilk yazı olunca ağırdan alalım dedik ve başlangıç olarak ***Pentest
 
 > **Not:** Vm'e GSM operatörlerinin unuttuğu bi yerden giriştiğim için; 
 >
->![images]({{ lymphatic.github.io }}/assets/img/padding-oracle/loading.jpg)
+>![images]({{ lymphatic.github.io }}/assets/img/padding-oracle/loading.jpg?raw=true)
 >
 >[@rootofarch](https://twitter.com/rootofarch)'ın [*son yazısında*](https://github.com/rootofarch/walkthroughs/tree/master/Donkey-Docker) bahsettiği **ruleti** atacak kadar geç bitirdim yazıyı :( 
 >
