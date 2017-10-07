@@ -16,10 +16,10 @@ Malum ilk yazı olunca ağırdan alalım dedik ve başlangıç olarak ***Pentest
 
 > **Not:** Vm'e GSM operatörlerinin unuttuğu bi yerden giriştiğim için; 
 >
->![images](https://lymphatic.github.io/_posts/screenshots/loading.jpg)
+>![images](https://github.com/lymphatic/lymphatic.github.io/blob/master/_posts/screenshots/loading.jpg?raw=true)
 >
 >[@rootofarch](https://twitter.com/rootofarch)'ın [*son yazısında*](https://github.com/rootofarch/walkthroughs/tree/master/Donkey-Docker) bahsettiği **ruleti** atacak kadar geç bitirdim yazıyı :( 
-
+>
 >Onun ss'ini de en sona ekliyorum...şşt inme sona sürprizi kaçmasın :)
 
 __Pentester Lab:Padding Oracle__
