@@ -3,9 +3,12 @@ layout: post
 title: "Padding Oracle Walkthrough [TR]"
 date: 2017-07-03
 excerpt: "Zaafiyetli VM Walkthrough"
-tags: [vulnhub, padding-oracle, walkthroughs]
 feature: /assests/img/walkthrough_background.jpg
 comments: true
+tag: 
+- vulnhub
+- padding-oracle
+- walkthroughs
 ---
 Merhabalar,
 
