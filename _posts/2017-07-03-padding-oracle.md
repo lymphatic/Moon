@@ -3,7 +3,7 @@ layout: post
 title: "Padding Oracle Walkthrough [TR]"
 date: 2017-07-03
 excerpt: "Zaafiyetli VM Walkthrough"
-feature: /assests/img/walkthrough_background.jpg
+feature: ![images]({{   lymphatic.github.io   }}/assests/img/walkthrough_background.jpg)
 comments: true
 tag: 
 - vulnhub
@@ -16,7 +16,7 @@ Malum ilk yazı olunca ağırdan alalım dedik ve başlangıç olarak ***Pentest
 
 > **Not:** Vm'e GSM operatörlerinin unuttuğu bi yerden giriştiğim için; 
 >
->![images]({{ lymphatic.github.io }}/screenshots/loading.jpg)
+>![images]({{ lymphatic.github.io }}/assets/img/padding-oracle/loading.jpg)
 >
 >[@rootofarch](https://twitter.com/rootofarch)'ın [*son yazısında*](https://github.com/rootofarch/walkthroughs/tree/master/Donkey-Docker) bahsettiği **ruleti** atacak kadar geç bitirdim yazıyı :( 
 >
@@ -34,7 +34,7 @@ Hiçbiriniz o linke gitmedi tabii ama devam etmeden önce en azından **Example*
 
 Geldiyseniz ufaktan başlayalım; indirdiğimiz **ISO** dosyasına ve tercihen **Kali Linux** sistemimize can veriyoruz. Vm'de şöyle bir başlangıç bizi karşılıyor:
 
-![images]({{ lymphatic.github.io }}/screenshots/01.png)
+![images]({{ lymphatic.github.io }}/assets/img/padding-oracle/01.png)
 
 Vm her ne kadar **"Üzerimde http servisi açık"** diye bağırsa da n'olur n'olmaz diyerek prosedürü bozmuyoruz.
 
@@ -42,7 +42,7 @@ Vm her ne kadar **"Üzerimde http servisi açık"** diye bağırsa da n'olur n'o
 $ ifconfig
 ```
 
-![images]({{ lymphatic.github.io }}/screenshots/02.png)
+![images]({{ lymphatic.github.io }}/assets/img/padding-oracle/02.png)
 
 ile **Kali** makinemizin **IP** adresini öğrenip, hedefin adresini ve açık olan portları tespit edebilmek için **nmap** taramamıza geçiyoruz.
 
@@ -50,7 +50,7 @@ ile **Kali** makinemizin **IP** adresini öğrenip, hedefin adresini ve açık o
 $ nmap -sV 192.169.43.219/24
 ```
 
-![images]({{ lymphatic.github.io }}/screenshots/03.png)
+![images]({{ lymphatic.github.io }}/assets/img/padding-oracle/03.png)
 
 > **Tip:** Burada emin olduğumuz için standart tarama yaptık ancak genelde ufak sürprizlere karşı tüm portları taramakta fayda var. Çünkü ***nmap*** default olarak ***top 1000*** port üzerinde  tarama yapıyor.
 > ```
@@ -59,7 +59,7 @@ $ nmap -sV 192.169.43.219/24
 
 görüldüğü üzere **80** portunda **HTTP** servisi aktif durumda. Hemen **browser**'ımıza koşuyoruz.
 
-![images]({{ lymphatic.github.io }}/screenshots/04.png)
+![images]({{ lymphatic.github.io }}/assets/img/padding-oracle/04.png)
 
 buna göre amacımız;
 
@@ -69,27 +69,27 @@ buna göre amacımız;
 
 > **Tip:** Bazen servisleri hata vermeye zorlamak bize onlar hakkında ufak ipuçları kazandırabilir. Çünkü **error** kalıpları da ayırt edici özellikte olabiliyor.
 
-![images]({{ lymphatic.github.io }}/screenshots/05.png)
+![images]({{ lymphatic.github.io }}/assets/img/padding-oracle/05.png)
 
 daha önce **nmap** taramamızda **MySQL** servisinin çalıştığını görmeseydik bile *Duplicate entry **'admin'** for key 'PRIMARY'* olarak dönen hata bize arkada çalışan servisin büyük ihtimalle **MySQL** olduğunu söylüyor olacaktı.
 
 Neyse biz işimize dönelim ve kendi kullanıcımızı oluşturalım.
 
-![images]({{ lymphatic.github.io }}/screenshots/06.png)
+![images]({{ lymphatic.github.io }}/assets/img/padding-oracle/06.png)
 
 **aucc** kullanıcı adı ile bir hesap oluşturup **login** olduk. Bu noktada `padding oracle` ibaresini hatırlamamız gerekiyor ve **cookie** var mı diye kontrol ediyoruz.
 
-![images]({{ lymphatic.github.io }}/screenshots/07.png)
+![images]({{ lymphatic.github.io }}/assets/img/padding-oracle/07.png)
 
 sitenin çalışma şekli tam da başlangıçta verdiğim linkte anlatıldığı gibi. 
 
-![images]({{ lymphatic.github.io }}/screenshots/toldya.jpg)
+![images]({{ lymphatic.github.io }}/assets/img/padding-oracle/toldya.jpg)
 
 Şimdi yapmamız gereken şey **login** esnasında **client** ile **server** arasına girerek **cookie**'ye müdahale etmek yani ***man in the middle attack***. Ama bundan önce iş **admin** cookie'sini oluşturmakta.
 
 Ufak bi araştırma sonucu `padding oracle` atakları için biçilmiş kaftan olan **padbuster** adında bi araç buluyoruz. **Kali'de** zaten bulunuyor ve kullanımı kolay. Ama aracın bizden istediği **inputlardan** birisine hala sahip değiliz; ***block-size***
 
-![images]({{ lymphatic.github.io }}/screenshots/08.png)
+![images]({{ lymphatic.github.io }}/assets/img/padding-oracle/08.png)
 
 **Block-size'ı** bulma konusunda en hızlı yol tabii ki deneme yanılma ama -nasıl becerdiysem- bulamadım :( Haliyle akılsız başın cezasını parmaklar çekiyor ve kısa bi script yazıyoruz:
 
@@ -114,7 +114,7 @@ for cookie in range(len(cookies)):
 
 buradaki mantık **username'deki** karakter sayısını artırarak *(au, aucc, auccauc...)* elde ettiğimiz **cookie'lerin** üretiminde kullanılan algoritmaya **padding** işlemini yaptırmak. 
 
-![images]({{ lymphatic.github.io }}/screenshots/09.png)
+![images]({{ lymphatic.github.io }}/assets/img/padding-oracle/09.png)
 
 **Output'a** bakacak olursak da açık şekilde görülüyor **block-size'ın 8**  olduğu. Bu da demek oluyor ki **padbuster'ı** kullanmaya hazırız.
 
@@ -124,8 +124,8 @@ $ padbuster http://192.168.43.247/login.php JrTKq42sXw63THYmbbIgK147lo%2BPfxJ6 8
 
 *"Enter an ID that matches the error condition"* uyarısına benim durumum için **2** girmem gerekti.
 
-![images]({{ lymphatic.github.io }}/screenshots/10.png)
-![images]({{ lymphatic.github.io }}/screenshots/11.png)
+![images]({{ lymphatic.github.io }}/assets/img/padding-oracle/10.png)
+![images]({{ lymphatic.github.io }}/assets/img/padding-oracle/11.png)
 
 ***Decrypted value (ASCII) : user=aucc*** olarak tertemiz çıktı. Bu algoritma ile ***"user=admin"*** i encrypt etmemiz gerekiyor.
 
@@ -133,24 +133,24 @@ $ padbuster http://192.168.43.247/login.php JrTKq42sXw63THYmbbIgK147lo%2BPfxJ6 8
 $ padbuster http://192.168.43.247/login.php JrTKq42sXw63THYmbbIgK147lo%2BPfxJ6 8 --cookies auth=JrTKq42sXw63THYmbbIgK147lo%2BPfxJ6 --encoding 0 --plaintext user=admin
 ```
 
-![images]({{ lymphatic.github.io }}/screenshots/12.png)
-![images]({{ lymphatic.github.io }}/screenshots/13.png)
+![images]({{ lymphatic.github.io }}/assets/img/padding-oracle/12.png)
+![images]({{ lymphatic.github.io }}/assets/img/padding-oracle/13.png)
 
 ***Encrypted value*** elimizde olduğuna göre tek yapmamız gereken **login** esnasında bizim **auth** değerimizi araya sıkıştırmak. Bunun için **burp** kullanabiliriz.
 
-![images]({{ lymphatic.github.io }}/screenshots/14.png)
+![images]({{ lymphatic.github.io }}/assets/img/padding-oracle/14.png)
 
 değeri değiştirip **forward** ettiğimizde
 
-![images]({{ lymphatic.github.io }}/screenshots/15.png)
-![images]({{ lymphatic.github.io }}/screenshots/16.png)
+![images]({{ lymphatic.github.io }}/assets/img/padding-oracle/15.png)
+![images]({{ lymphatic.github.io }}/assets/img/padding-oracle/16.png)
 
 o yeşil yazıyı görüp sevindirik oluyoruz :) derken... 
 
 **rulet** yandan göz kırpıyor ( -_- ) ve ***"Zaten sistem değiştirecektim"*** bahanesiyle veriyorum gazı ama ilk denemede gol oluyor :D
 
-![images]({{ lymphatic.github.io }}/screenshots/17.jpg)
-![images]({{ lymphatic.github.io }}/screenshots/18.jpg)
+![images]({{ lymphatic.github.io }}/assets/img/padding-oracle/17.jpg)
+![images]({{ lymphatic.github.io }}/assets/img/padding-oracle/18.jpg)
 
 sistem gittiğine göre artık yeni sistemi kurunca başka zaafiyetli makineler ile görüşmek üzere :D
 
