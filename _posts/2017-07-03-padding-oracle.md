@@ -16,7 +16,7 @@ Malum ilk yazı olunca ağırdan alalım dedik ve başlangıç olarak ***Pentest
 
 > **Not:** Vm'e GSM operatörlerinin unuttuğu bi yerden giriştiğim için; 
 >
->![images](https://github.com/lymphatic/lymphatic.github.io/blob/master/_posts/screenshots/loading.jpg?raw=true)
+>![images]({{ lymphatic.github.io }}/screenshots/loading.jpg)
 >
 >[@rootofarch](https://twitter.com/rootofarch)'ın [*son yazısında*](https://github.com/rootofarch/walkthroughs/tree/master/Donkey-Docker) bahsettiği **ruleti** atacak kadar geç bitirdim yazıyı :( 
 >
