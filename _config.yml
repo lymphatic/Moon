@@ -1,6 +1,6 @@
 # Site
 title:              M. Sami Karaca
-bio:                'Minimal, one column jekyll theme.'
+bio:                'A person who lives in his head, rather than the world.'
 description:        "Moon is a minimal, one column jekyll theme for your blog."
 reading_time:       true
 words_per_minute:   200
@@ -26,7 +26,7 @@ sass:
   style:            compressed
 
 # Comments
-disqus_shortname:   taylantatli
+disqus_shortname:   lymphatic
 
 # Social
 # if you don't have any of social below, comment the line.
