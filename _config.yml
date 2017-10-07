@@ -40,7 +40,7 @@ disqus_shortname:   lymphatic
 email:		    msamikaraca@protonmail.com
 twitter:            msamikaraca_
 #facebook:           username
-github-url:         https://github.com/lymphatic
+github-url:         lymphatic
 #stackoverflow:     123456/username   from a "http://stackoverflow.com/users/123456/username" link
 #linkedin:          username
 #xing:              username
@@ -60,6 +60,7 @@ github-url:         https://github.com/lymphatic
 #codepen:           username
 #keybase:           username
 #xmpp:              username@server.com
+telegram:	    https://t.me/msamikaraca
 #hackernews:        username
 
 # Gems
