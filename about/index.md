@@ -2,8 +2,8 @@
 layout: page
 title: About me
 tags: [about]
-date: 2017-10-07
+date: 2017-10-12
 comments: false
 ---
     
-<center>A person who lives in his head, rather than the world.</center>
+<center>Loading...</center>
