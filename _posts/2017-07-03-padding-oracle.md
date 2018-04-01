@@ -5,10 +5,7 @@ date: 2017-07-03
 excerpt: "Zaafiyetli VM Walkthrough"
 feature: ![images]({{ lymphatic.github.io }}/assets/img/walkthrough_background.jpg)
 comments: true
-tag: 
-- vulnhub
-- padding-oracle
-- walkthroughs
+tag: [vulnhub, padding-oracle, walkthroughs]
 ---
 Merhabalar,
 
