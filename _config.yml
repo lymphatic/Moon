@@ -1,6 +1,6 @@
 # Site
 title:              M. Sami Karaca
-bio:                ''
+bio:                "Loading..."
 description:        "Loading..."
 reading_time:       false
 words_per_minute:   1
@@ -26,7 +26,7 @@ sass:
   style:            compressed
 
 # Comments
-disqus_shortname:   lymphatic-github-io
+disqus_shortname:   lymphatic.github.io
 
 # Social
 # if you don't have any of social below, comment the line.
