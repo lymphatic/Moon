@@ -1,9 +1,8 @@
 ---
 layout: page
 title: About me
-date: 2018-02-22
+date: 2018-04-01
 comments: false
-tags: 
-- about
+tags: [about]
 ---
 <center>Loading...</center>
