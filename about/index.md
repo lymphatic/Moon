@@ -5,4 +5,4 @@ date: 2018-04-01
 comments: false
 tags: [about]
 ---
-<center>Loading...</center>
+<center><p> Loading... </p></center>
