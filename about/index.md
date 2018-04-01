@@ -8,4 +8,4 @@ comments: false
 
 ---
 
-<center>loading...</center>
+<center>Loading...</center>
