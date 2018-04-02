@@ -3,7 +3,7 @@ layout: post
 title: "Padding Oracle Walkthrough [TR]"
 date: 2017-07-03
 excerpt: "Zaafiyetli VM Walkthrough"
-feature: https://github.com/lymphatic/lymphatic.github.io/raw/master/assets/img/walkthrough_background.jpg
+feature: 'assets/img/walkthrough_background.jpg'
 comments: true
 tag: [vulnhub, padding-oracle, walkthroughs]
 ---
