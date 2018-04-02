@@ -71,7 +71,7 @@ gems:
   - jekyll-gist
   - jekyll-analytics
  
-plugins_dir:
+plugins:
   - jekyll-analytics
 
 jekyll_analytics:
