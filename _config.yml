@@ -70,7 +70,10 @@ gems:
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-analytics
-  
+ 
+plugins_dir:
+  - jekyll-analytics
+
 jekyll_analytics:
   GoogleAnalytics:          # Add, if you want to track with Google Analytics
     id: UA-116743337-1      # Required - replace with your tracking id
