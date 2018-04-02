@@ -69,7 +69,13 @@ gems:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-gist
-
+  - jekyll-analytics
+  
+jekyll_analytics:
+  GoogleAnalytics:          # Add, if you want to track with Google Analytics
+    id: UA-116743337-1      # Required - replace with your tracking id
+    anonymizeIp: false      # Optional - Default: false - set to true for anonymized tracking
+    
 jekyll-mentions:
     base_url: https://github.com
 
